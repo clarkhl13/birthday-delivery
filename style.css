@@ -1,0 +1,1477 @@
+/* ====== GLOBAL STYLES ====== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Bangers', 'Segoe UI', sans-serif; 
+	background: #000000;
+	color: #ffffff;
+	overflow-x: hidden;
+	min-height: 100vh;
+	margin: 0;
+}
+
+/* ====== STARFIELD BACKGROUND ====== */
+body::before {
+	content: "";
+	position: fixed;
+	top: 0; 
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('https://www.transparenttextures.com/patterns/stardust.png');
+	radial-gradient(circle at top, #1b0a4f, #001a44, #000000, 70%);
+	opacity: 0.4;
+	z-index: -1;
+	pointer-events: none;
+}
+
+/* ====== NAVITGATION ====== */
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	text-align: center;
+	padding: 18px 0;
+
+	background: rgba(0, 5, 18, 0.88);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+
+	border-bottom: 1px solid rgba(179, 107, 255, 0.35);
+	
+	box-shadow:
+		0 4px 18px rgba(0, 0, 0, 0.45);
+		0 0 15px rgba(79, 25, 100, 0.25);
+	z-index: 1000; 
+}
+
+nav a {
+	color: #d8b4ff;
+	text-decoration: none;
+	margin: 0 20px;
+	font-size: 1.1rem;
+	letter-spacing: 2px;
+	transition: 0.3s;
+}
+
+nav a:hover {
+	color: #ffffff
+	text-shadow: 0 0 10px #b36bff;
+}	
+
+/* ====== HERO SECTION ====== */
+.hero {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	transform: rotate(0deg);
+}
+
+.hero h1 {
+	font-size: 6rem;
+	color: #ffffff;
+	text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+	transform: rotate(-3deg);
+}
+
+.hero h2 {
+	font-size: 8rem;
+	color: #39ff14;
+	text-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14;
+	margin-top: -20px;
+	transform: rotate(-3deg);
+}
+
+.subtitle {
+	font-size: 1.4rem;
+	letter-spacing: 3px;
+	color: #ffffff !important;
+	text-shadow: none !important;
+	transform: rotate(0deg);
+}
+		
+/* ====== BUTTON ====== */
+.btn {
+	margin-top: 40px;
+	padding: 18px 50px;
+	font-size: 1.8rem;
+	color: #fff;
+	background: transparent;
+	border: 3px solid #b36bff;
+	border-radius: 15px;
+	box-shadow: 0 0 20px #b36bff, 0 0 40px #b36bff;
+	cursor: url('lightsaber-cursor.png'), auto;
+	transition: all 0.3s ease;
+}
+.btn:hover {
+	background: #b36bff;
+	color: #000;
+	transform: scale(1.05);
+	box-shadow: 0 0 30px #b36bff, 0 0 50px #b36bff;
+}
+.icon { font-size: 1.6rem; margin-left: 10px }
+
+/* ====== MESSAGE BOX ====== */
+.message {
+	margin-top: 30px;
+	font-size: 1.3rem;
+	color: #fff;
+	background: rgba(0,0,0,0.6);
+	padding: 15px 25px;
+	border-radius: 10px;
+	border: 1px solid #00f0ff;
+	box-shadow: 0 0 20px #00f0ff;
+	display: inline-block;
+}
+
+/* ====== FOOTER ====== */
+
+.footer {
+	position: fixed;
+	bottom: 25px;
+	left: 0;
+	width: 100%;
+	text-align: center; 
+	font-size: 1.1rem;
+	letter-spacing: 2px;
+	color: #d8b4ff;
+	z-index: 1000;
+}
+
+.footer p {
+	margin: 0;
+}
+
+
+/* ====== CENTER EVERYTHING BELOW THE TITLE ====== */
+
+.subtitle {
+	transform: none;
+	text-align: center;
+	width: 100%
+}
+
+.btn {
+	display: block;
+	margin: 40px auto 0 auto;
+	transform: none;
+}
+
+.btn:hover{
+	transform: scale(1.05);
+}
+
+.message {
+	display: table;
+	width: auto;
+	max-width: 500px;
+	margin: 25px auto 0 auto;
+	text-align: center;
+}
+
+.message:empty {
+	display: none;
+}
+
+/* ===== FIX HOME + MESSAGES SEPARATION =====*/
+
+.hero {
+	min-height: 100vh !important;
+	height: auto !important;
+}
+
+.messages-section {
+	min-height: 100vh;
+	padding: 120px 30px 80px;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+.postcard-container {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	gap: 30px;
+	flex-wrap: nowrap;
+	margin-top: 45px;
+	width: 100%;
+	max-width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.postcard {
+	width: calc(33.333% - 20px);
+	max-width: 430px;
+	min-height: 240px;
+	padding: 28px;
+	box-sizing: border-box;
+	background: #f4e3bd;
+	color: #24170f;
+	border-radius: 8px;
+	position: relative;
+}
+
+.footer {
+	position: absolute !important;
+	bottom: 25px !important;
+}
+
+
+/* ===== MAKE NAV CLICKABLE =====*/
+
+nav {
+	position: fixed !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999999 !important;
+	pointer-events: auto !important;
+}
+
+nav a {
+	position: relative;
+	z-index: 100000;
+	pointer-events: auto !important;
+}
+
+/* ===== LIGHTSABER CURSOR ===== */
+
+html,
+body,
+.hero,
+.messages-section,
+.postcard-container,
+.postcard,
+.footer,
+.subtitle,
+h1,
+h2,
+h3,
+p {
+	cursor: url("lightsaber-cursor.png"), auto !important;
+}
+
+a,
+button,
+.btn {
+	cursor: url("lightsaber-cursor.png"), auto !important;
+}
+
+/* ===== FINAL NAV CLICK FIX ===== */
+
+nav {
+	pointer=events: none !important;
+}
+
+nav a {
+	pointer-events: auto !important;
+	position: relative !important;
+	z-index: 100001 !important;
+}
+
+/* ===== LIGHTSABER CURSOR TEST =====*/
+
+body {
+	cursor: auto !important;
+}
+
+a,
+button,
+.btn {
+	cursor: pointer !important;
+}
+
+
+/* MESSAGE POPUP */
+.message-popup {
+	display: none;
+	position: fixed;
+	z-index: 999999 !important;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	align-items: center;
+	justify-content: center;
+}
+
+.popup-content {
+	background: #fffaf0;
+	color: #222;
+	width: 80%;
+	max-width: 600px;
+	padding: 40px;
+	border-radius: 20px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+}
+
+.popup-content h2 {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.popup-content p {
+	line-height: 1.6;
+	font-size: 18px;
+}
+
+.close-popup {
+	position: absolute;
+	top: 12px;
+	right: 18px;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* POPUP FONTS */
+
+.popup-content h2 {
+	font-family: "Bangers", sans-serif;
+	letter-spacing: 2px;
+	font-size: 30px;
+}
+
+.popup-content p {
+	font-family: "Barlow", sans-serif;
+	font-size: 18px;
+	line-height: 1.7;
+	font-weight: 500;
+	color: #222222; !important;
+}
+
+/* READ MESSAGE BUTTON */
+
+.postcard button {
+	font-family: "Bangers", sans-serif; 
+	font-size: 16px;
+	letter-spacing: 1.5px;
+	
+	background: #1b0a4f;
+	color: white;
+	
+	border: 2px solid #8b5cf6;
+	border-radius: 20px;
+
+	padding: 10px 22px;
+	margin-top: 12px;
+	
+	cursor: pointer;
+	
+	box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+	
+	transition: transform 0.2s ease, box shadow 0.2s ease;
+
+}
+
+.postcard button:hover {
+	transform: scale(1.06);
+	box-shadow: 0 0 18px rgba(139, 92, 246, 0.9);
+}
+
+/* MESSAGES PAGE TITLE*/
+
+.messages-section .section-title {
+	font-family: "Bangers", sans-serif;
+	font-size: 4rem;
+	color: #ffffff;
+	text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
+	transform: none;
+	letter-spacing: 3px;
+	margin-bottom: 80px;
+}
+
+/* POSTCARD / LETTER LOOK */
+
+.postcard {
+	background:
+		linear-gradient(rgba(255, 248, 225, 0.92), rgba(255, 248, 225, 0.92)),
+		repeating-linear-gradient(
+			0deg,
+			transparent,
+			transparent 3px,
+			rgba(120, 90, 50, 0.04) 4px
+		);
+	color: #2b2118;
+
+	border: 2px solid #c9ad7b;
+	border-radius: 8px;
+
+	box-shadow: 
+		0 8px 20px rbga(0, 0, 0, 0.35),
+		inset 0 0 25px rgba(120, 80, 30, 0.12);
+
+	position: relative;
+}
+
+/* PURPLE + GREEN AIRMAIL POSTCARDS */
+
+.postcard {
+	border: 8px solid transparent;
+	
+	background: 
+		linear-gradient(#fff8e1, #fff8e1) padding-box,
+		repeating-linear-gradient(
+			45deg,
+			#4f1964 0px,
+			#4f1964 14px,
+			#1f7a3f 14px,
+			#1f7a3f 28px,
+			#fff8e1 28px,
+			#fff8e1 42px
+		) border-box;
+
+	border-radius: 12px;
+
+	box-shadow: 
+		0 10px 25px rgba(0, 0, 0, 0.4),
+		inset 0 0 25px rgba(79,25, 100, 0.08);
+
+	position: relative;
+	
+	margin-bottom: 35px;
+}
+
+/* ===== MESSAGES PAGE SUBTITLE ===== */
+
+.message-subtitle {
+	font-family: "Barlow", sans-serif;
+	font-size: 1.3rem;
+	letter-spacing: 3px;
+	color: #ffffff;
+	text-align: center;
+
+	/* pulls subtitle closer to FROM TEXAS WITH LOVE */
+	margin-top: -40px;
+	margin-bottom: 45px;
+	
+	text-shadow: 
+		0 0 8px #ffffff,
+		0 0 15px #00f0ff,
+		0 0 25px #00f0ff;
+}
+
+/* FIX TITLE + SUBTITLE SPACING */
+
+.messages-section .section-title {
+	margin-bottom: 8px !important;
+}
+
+.messages-subtitle {
+	margin-top: 0 !important;
+	margin-bottom: 45px !important;
+}
+
+/* ===== MOBILE POSTCARDS ===== */
+@media (max-width: 850px) {
+	.postcard-container {
+		flex-wrap: wrap;
+		gap: 25px;
+	}
+	
+	.postcard {
+		width: 100%;
+		max-width: 430%;
+	}
+}
+
+/* ===== BIGGER POSTCARD TEXT ===== */
+
+.postcard h3 {
+	font-size: 28px;
+	line-height: 1.15;
+	margin-bottom: 14px;
+}
+
+.postcard p {
+	font-size: 19px;
+	line-height: 1.4;
+}
+
+.postcard button {
+	font-size: 20px;
+	padding: 12px 28px;
+	margin-top: 18px;
+}
+
+/* Keep everything comfortable on phones */
+@media (max-width: 850px) {
+	.postcard h3 {
+		font-size: 24px;
+	}
+
+	.postcard p {
+		font-size: 17px;
+	}
+
+	.postcard button {
+		font-size: 18px;
+	}
+}
+
+/* ===== FORCE 3 POSTCARDS ACROSS ===== */
+
+.messages-section .postcard-container {
+	display: grid !important;
+	grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+	gap: 30px !important;
+
+	width: calc(100% - 60px) !important;
+	max-width: 1450px !important;
+
+	margin: 45px auto 0 auto !important;
+	padding: 0 !important;
+
+	align-items: stretch !important;
+}
+
+.messages-section .postcard {
+	width: 100% !important;
+	max-width: none !important;
+	min-width: 0 !important;
+	box-sizing: border-box !important;
+	margin: 0 !important;
+}
+
+/* Phones/tablets can stack */
+@media (max-width: 850px) {
+	.messages-section .postcard-containers {
+		grid-template-columns: 1fr !important;
+		width: calc(100% - 30px) !important;
+	}
+}
+
+/* ===== FINAL MESSAGES 3-CARD LAYOUT ===== */
+
+.postcard-containter {
+	display: flex !important;
+	flex-direction: row !important;
+	flex-wrap: nowrap !important;
+	justify-content: center !important;
+	align-items: stretch !important;
+	gap: 30px !important;
+	width: 100% !important;
+	max-width: 1400px !important;
+	margin: 45px auto 0 !important;
+	padding: 0 25px !important;
+	box-sizing: border-box !important;
+}
+
+.postcard-container .postcard {
+	width: calc((100% - 60px) / 3) !important;
+	min-width: 0 !important;
+	max-width: none !important;
+	min-height: 280px !important;
+	height: auto !important;
+	flex: 1 1 0 !important;
+	box-sizing: border-box !important;
+	
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
+.postcard-container .postcard h3 {
+	font-size: 24px !important;
+	line-height: 1.2 !important;
+}
+
+.postcard-container .postcard p {
+	font-size: 18px !important;
+	line-height: 1.5 !important;
+}
+
+/* ===== EMERGENCY POSTCARD WIDTH FIX ===== */
+
+.messages-section .postcard-container {
+	display: flex !important;
+	flex-direction: row !important;
+	flex-wrap: nowrap !important;
+	justify-content: center !important;
+	align-items: center !important;
+	gap: 25px !important;
+	width: 100% !important;
+	max-width: none !important;
+}
+
+/* ===== MAKE POSTCARD BUTTONS CLICKABLE ===== */
+
+.postcard-container,
+.postcard {
+	pointer-events: auto !important;
+}
+
+/* ===== SURPRISES PAGE ===== */
+
+/* Match the spacing of the Messages page */
+.surprises-section {
+	text-align: center;
+	padding: 80px 20px;
+}
+
+/* Match the Messages page title spacing */
+.surprises-section .section-title {
+	margin-bottom: 8px !important;
+}
+
+/* EXACT same subtitle styling as Messages */
+.surprises-subtitle {
+	font-family: "Barlow", sans-serif;
+	font-size: 1.3rem;
+	letter-spacing: 3px;
+	color: #ffffff
+	text-align: center;
+	margin-top: 0 !important;
+	margin-bottom: 45px !important;
+	
+	text-shadow: 
+		0 0 8px #ffffff;
+		0 0 15px #00f0ff;
+		0 0 25px #00f0ff;
+}
+
+/* ====== PRESENT ======= */
+
+.gift-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/* Wrapped present */
+.gift-box {
+	width: 360px;
+	min-height: 230px;
+	
+	background: 
+		/* horizontal glowing ribbon */
+		linear-gradient(
+			transparent 42%,
+			#39ff88 42%,
+			#39ff88 58%,
+			transparent 58%
+		),
+
+		/* vertical green ribbon */
+		linear-gradient(
+			90deg,
+			transparent 44%,
+			#39ff88 44%,
+			#39ff88 56%,
+			transparent 56%
+		),
+
+		/* purple wrapping paper */
+		linear-gradient(
+			135deg,
+			#68228b,
+			#4f1964
+		);
+		
+	border: 3px solid #39ff88;
+	border-radius: 12px;
+
+	padding: 45px 30px 30px;
+
+	box-shadow: 
+		0 0 10px #39ff88,
+		0 0 25px #39ff88,
+		0 0 45px rgba(57, 255, 136, 0.8),
+		0 0 70px rgba(57, 255, 136, 0.45),
+		inset 0 0 20px rgba(57, 255, 136, 0.15);
+
+	color: white;
+	
+	position: relative;
+	
+	margin-top: 50px;
+}
+
+/* CSS Bow - replaces the emoji */
+.gift-bow {
+	position: absolute;
+	
+	top: -55px;
+	left: 50%;
+
+	transform: translateX(-50%);
+
+	width: 42px;
+	height: 42px;
+	
+	background: #39ff88;
+	
+	border-radius: 8px;
+
+	font-size: 0;
+
+	box-shadow:
+		0 0 10px #39ff88,
+		0 0 20px rgba(57, 255, 136, 0.8);
+}
+
+/* Left loop of bow */
+.gift-bow::before {
+	content: "";
+
+	position: absolute;
+	
+	width: 65px;
+	height: 42px;
+
+	right: 28px;
+	top: -5px;
+	
+	background: #4f1964;
+
+	border: 5px solid #39ff88;
+	
+	border-radius: 50% 50% 15% 50%;
+
+	transform: rotate(18deg);
+
+	box-shadow: 0 0 10px #39ff88;
+}
+
+/* Right loop of bow */
+.gift-bow::after {
+	content: "";
+
+	position: absolute;
+	
+	width: 65px;
+	height: 42px;
+
+	right: 28px;
+	top: -5px;
+	
+	background: #4f1964;
+
+	border: 5px solid #39ff88;
+	
+	border-radius: 50% 50% 50% 15%;
+
+	transform: rotate(-18deg);
+
+	box-shadow: 0 0 10px #39ff88;
+}
+
+/* PRESENT #1 */
+.gift-label {
+	font-family: "Bangers", sans serif;
+	font-size: 2rem;
+	letter-spacing: 3px;
+	margin-bottom: 20px;
+}
+
+/* Hint under present number */
+.gift-hint {
+	font-family: "Barlow", sans-serif;
+	font-size: 1rem;
+	margin-bottom: 25px;
+}
+
+/* ===== UNWRAP BUTTON ====== */
+
+.unwrap-button {
+	font-family: "Bangers", sans-serif;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+
+	color: white;
+	background: #111;
+	
+	border 2px solid white;
+	border-radius: 20px;
+
+	padding: 12px 25px;
+
+	cursor: pointer;
+
+	box-shadow: 
+		0 0 8px white,
+		0 0 15px #1f7a3f;
+}
+
+.unwrap-button:hover {
+	transform: scale(1.05);
+}
+
+/* ====== PRESENT AFTER UNWRAPPING ===== */
+
+.gift-reveal {
+	display: none;
+	max-width: 500px;
+	
+	background: #fff8e1;
+	color: #222;
+	
+	padding: 30px;
+
+	border-radius: 15px;
+
+	box-shadow: 
+		0 0 20px #4f1964,
+		0 0 35px #1f7a3f,
+}
+
+.gift-reveal h2 {
+	font-family: "Bangers", sans-serif;
+	color: #4f1964;
+	letter-spacing: 2px;
+}
+
+.gift-reveal img {
+	width: 100%;
+	max-width: 400px;
+	border-radius: 12px;
+	margin: 20px 0;
+}
+
+.gift-reveal p {
+	font-family: "Barlow", sans-serif;
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+
+
+/* MEMORY LANE PAGE */
+
+.memory-lane {
+	width: min(1000px, 90%);
+	margin: 0 auto;
+	padding: 120px 20px 80px;
+}
+
+.memory-header {
+	text-align: center;
+	margin-bottom: 70px;
+}
+
+.memory-header h1 {
+	margin: 0 0 15px;
+}
+
+.memory-header p {
+	margin: 0 auto;
+	max-width: 700px;
+	line-height: 1.6;
+}
+
+.memory-stop {
+	position: relative;
+	margin: 60px auto;
+	max-width: 800px;
+}
+
+.memory-card {
+	padding: 30px;
+	border-radius: 20px;
+}
+
+.memory-card p {
+	line-height: 1.7;
+	margin: 12px 0;
+}
+
+.memory-marker {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.memory-mission {
+	margin-top: 25px;
+	padding: 20px;	
+	border-radius: 15px;
+}
+
+.memory-clue {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+/* Memory Lane hint */
+
+.memory-hint {
+	display: none;
+	margin-top: 15px;
+}
+
+.memory-hint.show {
+	display: block;
+}
+
+/* Memory Lane Glow */
+
+.memory-card {
+	background: rgba(10, 10, 18, 0.78);
+	border: 2px solid #4f1964;
+	border-radius: 18px;
+	padding: 30px;
+	
+	box-shadow:
+		0 0 12px rgba(79, 25, 100, 0.8);
+		0 0 28px rgba(79, 25, 100, 0.45);
+		inset 0 0 18px rgba(31, 122, 63, 0.12);
+}
+
+.memory-marker {
+	display: inline-block;
+	color: #ffffff;
+	border: 2px solid #1f7a3f;
+	border-radius: 20px;
+	padding: 8px 16px;
+	margin-bottom: 22px;
+
+	text-shadow:
+		0 0 8px #1f7a3f
+		0 0 14px #1f7a3f
+
+	box-shadow:
+		0 0 10px rgba(31, 122, 63, 0.8);
+		0 0 22px rgba(31, 122, 63, 0.45);
+}
+
+.memory-date {
+	color: #ffffff;
+	letter-spacing: 3px;
+
+	text-shadow: 		
+		0 0 7px #4f1964;
+		0 0 12px 4f1964;
+}
+
+.memory-mission {
+	margin-top: 30px;
+	padding: 22px;
+
+	border-left: 3px solid #1f7a3f;
+	background: rgba(31, 122, 63, 0.06);
+
+	box-shadow: 
+		inset 8px 0 18px rgba(31, 122, 63, 0.08);
+}
+
+.memory-hint-btn {
+	margin-top: 10px;
+	padding: 10px 18px;
+
+	background: rgba(79, 25, 100, 0.35);
+	color: #ffffff;
+
+	border: 2px solid #4f1964;
+	border-radius: 20px;
+
+	font: inherit;
+	font-weight: bold;
+	cursor: pointer;
+
+	box-shadow: 
+		0 0 8px rgba(79, 25, 100, 0.8);
+		0 0 18px rgba(79, 25, 100, 0.45);
+
+	transition: 0.25s ease;
+}
+
+.memory-hint-btn:hover {
+	border-color: #1f7a3f;
+
+	box-shadow: 
+		0 0 10px rgba(331, 122, 63, 0.9);
+		0 0 22px rbga(31, 122, 63, 0.55);
+
+	transform: translateY(-2px);
+}
+
+.memory-hint {
+	margin-top: 18px;
+	padding: 15px;
+	
+	border-radius: 12px;
+	
+	text-shadow:
+		0 0 7px #1f7a3f;
+}
+
+/* MEMORY LANE NAV FINAL */
+
+.memory-lane {
+	padding-top: 130px;
+}
+
+
+
+/* FINAL NAV LAYOUT */
+
+nav {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	gap: 40px !important;
+
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+
+	padding: 18px 20px !important;
+	box-sizing: border-box !important;
+	
+	background: rgba(0, 5, 18, 0.92) !important;
+	
+	border-bottom: 1px solid rgba(179, 107, 255, 0.35);
+
+	z-index: 999999 !important;
+}
+
+nav a {
+	display: inline-block !important;
+	position: relative !important;
+	
+	margin: 0 !important;
+	
+	color: #d8b4ff !important;
+	text-decoration: none !important;
+
+	pointer-events: auto !important;
+	z-index: 1000000 !important;
+}
+
+nav a:hover {
+	color: #ffffff !important;
+	text-shadow: 0 0 10px #b36bff;
+}
+
+.memory-hidden {
+	display: none;
+}
+
+.memory-hidden.open {
+	display: block;
+	animation: memoryReveal 0.5s ease;
+}
+
+@keyframes memoryReveal {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ====== PRETTY INTERACTIVE BUTTONS ====== */	
+
+.continue-btn,
+.mystery-submit {
+	background: rgba(20, 15, 35, 0.9);
+	color: #ffffff;
+
+	border: 2px solid #8b5cf6;
+	border-radius: 22px;
+
+	padding: 11px 22px;
+
+	font-family: inherit;
+	font-weight: 700;
+	letter-spacing: 1px;
+
+	cursor: pointer;
+	
+	box-shadow: 
+		0 0 8px rgba(139, 92, 246, 0.7);
+		0 0 20px rgba(139, 92, 246, 0.25);
+	transition: all 0.25s ease;
+}
+
+.continue-btn:hover,
+.mystery-submit:hover {
+	transform: translateY(-2px);
+
+	border-color: #68ff8a;
+	
+	box-shadow: 
+		0 0 10px rgba(104, 255, 138, 0.8);
+		0 0 24px rgba(104, 255, 138, 0.3);
+}
+
+/* ===== MYSTERY WORD INPUT =====*/
+
+.mystery-input {
+	width: min(300px, 80%);
+	padding: 12px 16px;
+
+	background: rgba(15, 12, 30, 0.9);
+	color: white;
+
+	border: 2px solid #8b5cf6;
+	border-radius: 18px;
+
+	font-family: inherit;
+	font-size: 16px;	
+	text-align: center;
+
+	outline: none;
+
+	box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+	
+	transition: all 0.25s ease;
+}
+
+.mystery-input:focus {
+	border-color: #68ff8a;
+
+	box-shadow: 
+		0 0 10px rgba(104, 255, 138, 0.6);
+		0 0 20px rgba(104, 255, 138, 0.2);
+}
+
+.mystery-input::placeholder {
+	color: rgba(255, 255, 255, 0.55);
+}
+
+}
+
+.surprises-section h1.section-title,
+.memories-section h1.section-title,
+.memories-section h2.section-title {
+	font-family: "Bangers", sans-serif !important;
+	font-size: 4rem !important;
+	color: #ffffff !important;
+	text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff !important;
+	transform: none: !important;
+	letter-spacing: 3px !important;
+}
+	
+/* ===== FINAL PAGE TITLE MATCH ===== */
+
+.messages-section .section-title,
+.surprises-section .section-title,
+.memory-lane .section-title {
+	font-family: "Bangers", sans-serif !important;
+	font-size: 4rem !important;
+	color: #ffffff !important;
+	text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff !important;
+	transform: none: !important;
+	letter-spacing: 3px !important;
+	margin-bottom: 8px !important;
+}
+
+/* ===== MEMORIES TITLE + SUBTITLE FIX ====== */
+
+.memory-lane .section-title {
+	font-size: 3.2rem !important;
+	white-space: nowrap !important;
+	margin-bottom: 8px !important;
+}
+	
+.memory-header p {
+	font-family: "Barlow", sans-serif !important;
+	font-size: 1.3rem !important;
+	letter-spacing: 3px !important;
+	color: #ffffff !important;
+	text-align: center !important;
+	margin-top: 0 !important;
+	margin-bottom: 45px !important;
+
+	text-shadow:	
+		0 0 5px #ffffff,
+		0 0 10px #00f0ff,
+		0 0 25px #00f0ff !important;
+}
+
+
+/* PRESENT LAYOUT CLEANUP */
+
+.gift-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* PRESENT #1 */
+.gift-label {
+	order: 1;
+	font-family: "Bangers", sans-serif;
+	font-size: 2.4rem;
+	letter-spacing: 4px;
+	line-height: 1.2;
+	margin: 0 0 4x 0 !important;
+}
+
+/* Actual wrapped present */
+.gift-box {
+	order: 2;
+	width: 300px;
+	min-height: 260px;
+	margin: 0 auto 28px auto !important;
+}
+
+/* Hint */
+.gift-hint {
+	order: 3;
+	font-family: "Barlow", sans-serif;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+	line-height: 1.5;
+	margin: 0 0 18px important;
+}
+
+/* Unwrap button */
+.unwrap-button {
+	order: 4;
+	margin-top: 0 !important;
+}
+	
+.wrap-button {
+	position: relative !important;
+	top: 25px !important;	
+	margin-bottom: 25px !important;
+}
+
+/* ===== PRESENTS GRID ===== */
+
+.gifts-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 30px;
+	width: 100%;
+	max-width: 1200px;
+	margin: 40px auto 0;
+	align-items: start;
+}
+
+.gift-card {
+	width: 100%;
+	min-width: 0;
+}
+
+/* Stack presents on smaller screens */
+@media (max-width: 900px) {
+	.gifts-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* PRESENT #2 ORDER */
+#present2 .gift-label {
+	order: 1;
+}
+
+#present2 .gift-hint {
+	order: 2;
+}
+
+#present2 .unwrap-button {
+	order: 3;
+	margin: 0 0 18px 0 !important;
+}
+
+#present2 .gift-box {
+	order: 4;
+}
+
+#present2 .gift-bow {
+	order: 4;
+}
+
+#present2 .gift-box {
+	width: 300px !important;
+	min-height: 260px !important;
+	margin: 0 auto 28px auto !important;
+}
+
+.song-guess input {
+	padding: 12px 16px;
+	border-radius: 12px;
+	border: 2px solid #4f1964;
+	font-size: 16px;
+	width: 220px;
+	outline: none;
+}
+
+.song-guess input:focus {
+	box-shadow: 0 0 10px #4f1964;
+}
+
+/* MEMORY LANE FINALE */
+
+.memory-finale {
+	text-align: center;
+	margin: 70px auto 30px;
+	padding: 25px 15px;
+
+	font-size: clamp(1.2rem, 4vw, 2rem);
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 1.5;
+
+	color: #75ff9b;
+
+	text-shadow:
+		0 0 5px #1f7a3f,
+		0 0 15px #1f7a3f,
+		0 0 25px #4f1964;
+
+	animation: finaleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes finaleGlow {
+	from {
+		color: #75ff9b
+		text-shadow:
+			0 0 8px #1f7a3f,
+			0 0 20px #1f7a3f,
+			0 0 30px #1f7a3f;
+}
+
+	to {
+		color: #c69aff;
+		text-shadow:
+			0 0 8px #4f1964,
+			0 0 20px #8b5cf6,
+			0 0 35px #4f1964;
+	}
+}
+
+/* FIX PRESENT #3 ORDER */
+
+#present3 .gift-label {
+	order: 1;
+}
+
+#present3 h2 {
+	order: 2;
+}
+
+#present3 .gift-hint {
+	order: 3;
+}
+
+#present3 .unwrap-button {
+	order: 4;
+	margin: 0 0 18px 0 !important;
+}
+
+#present3 .gift-box,
+#present3 .gift-bow {
+	order: 5;
+}
+
+#present3 .gift-box {
+	width: 300px !important;
+	min-height: 260px !important;
+	margin: 0 auto 28px auto !important;
+}
+
+#present3 .gift-reveal {
+	order: 6;
+}
+
+
+/* BIRTHDAY PRESENTS — FINAL ALIGNMENT */
+
+.gifts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.gifts-grid > .gift-container,
+.gifts-grid > .gift-card {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Keep the present cards evenly aligned */
+#present2,
+#present3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Reserve equal space for the descriptions */
+#present2 .gift-hint,
+#present3 .gift-hint {
+  min-height: 80px;
+}
+
+/* Keep the gift boxes centered */
+#present2 .gift-box,
+#present3 .gift-box {
+  align-self: center;
+}
+
+/* Mobile-friendly layout */
+@media (max-width: 800px) {
+  .gifts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #present2 .gift-hint,
+  #present3 .gift-hint {
+    min-height: 0;
+  }
+}
+
+/* MOVE PRESENT #1 TITLE UP */
+
+.gift-container .gift-label {
+	position: relative;
+	top: -50px;
+}
+
+/* LOWER PRESENT #1 BUTTON ONLY */
+
+.gift-container #unwrapButton {
+	position: relative;
+	top: 30px;
+}
+
+/* Keep postcard pop-up inside the screen */
+.message-popup {
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.message-popup .popup-content {
+    position: relative;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Keep the X visible while scrolling */
+.message-popup .close {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}

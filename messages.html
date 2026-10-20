@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charse=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Messages for Fedor</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	
+	<nav> 
+		<a href="index.html">HOME</a>
+		<a href="messages.html">MESSAGES</a>
+		<a href="surprises.html">SURPRISES</a>
+		<a href="memories.html">MEMORIES</a>
+	</nav>
+
+
+<section class="messages-section" id="messages">
+	<h2 class="section-title">💌 FROM TEXAS WITH LOVE 💌 </h2>
+
+<p class="messages-subtitle">A LITTLE PIECE OF MY WORLD, SENT ALL THE WAY TO YOURS. 
+</p>
+	
+	<div class="postcard-container">
+		<div class="postcard bluebonnet-card">
+			<div class="postcard-stamp"></div>
+
+			<h3>READ IF YOU FEEL OVERWHELMED</h3>
+			
+			<p>
+				For the days when your brain has approximately 66 tabs open at once. 🤯
+			</p>
+			<button onclick="openMessage('overwhelmed')">
+				CLICK HERE TO READ
+			</button>
+		</div>
+		<div class="postcard">
+			<div class="postcard-stamp">💌</div>
+
+	<h3>Game Time, Fart Knocker!😂</h3>
+
+<p>
+	There are some suspicious capital letters hiding in that postcard...👀 <br><i>maybe a secret message within too</i></br>
+</p>
+
+<button onclick="openMessage('knocker')">
+				CLICK HERE TO PLAY
+			</button>
+
+</div>
+
+<!-- MAILBOX TO TEXAS -->
+<div class="postcard mailbox-card">
+	<div class="postcard-stamp">🪙</div>
+
+	<h3>📬 MAILBOX TO TEXAS </h3>
+
+	<p> 
+		Your turn. Send something back my way.
+	</p>
+
+	<h3>A RUBLE FOR YOUR THOUGHTS 🪙</h3>
+
+<button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScDTu5N3dQMtNiFrBm1hGVmufJ--MBUIvaJp3KaeU_1HEQ6pw/viewform?usp=header')">
+	CLICK HERE TO SEND
+</button>
+
+</div>
+
+</div> <!-- closes postcard-container-->
+
+</section>
+
+<div id="messagePopup" class="message-popup">
+	<div class="popup-content">
+		<span class="close-popup" onclick="closeMessage()">&times;</span>
+		<h2 id="popupTitle"></h2>
+		<p id="popupText"></p>
+
+	</div>
+</div>
+
+	<script src="script.js"></script>
+
+</body>
+</html>
+

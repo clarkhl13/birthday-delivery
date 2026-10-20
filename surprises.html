@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Birthday Surprises</title>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<nav>
+		<a href="index.html">HOME</a>
+		<a href="messages.html">MESSAGES</a>	
+		<a href="surprises.html">SURPRISES</a>
+		<a href="memories.html">MEMORIES</a>
+	</nav>
+
+	<section class="surprises-section">
+
+		<h1 class="section-title">🎁 BIRTHDAY DELIVERY 🎁</h1>
+	
+		<p class="surprises-subtitle">
+			Apparently Texas to Russia shipping is MUCH faster this way...& cheaper! 🤣 
+		</p>
+
+		<div class="gifts-grid">
+
+			<div class="gift-container">
+
+			<div class="gift-box"> </div>
+
+			<div class="gift-bow"></div>
+
+			<div class="gift-label">
+				<br>PRESENT #1
+			
+			<p class="gift-hint">
+				<br> Hint: Is it just a digital gift? 
+			</p>
+
+			
+			<button id="unwrapButton" class="unwrap-button"
+				onclick="unwrapGift()">
+				UNWRAP ME
+			</button>
+
+		</div>
+
+
+		<div id="giftReveal" class="gift-reveal">
+
+			<h2>SURPRISE!🎁</h2>
+
+			<img src="keychain.jpeg" alt="A HANDCRAFTED GIFT FOR MY FAVORITE RUSSIAN 😘">
+
+			<p> 
+				When we were making our BTS freebies for the concert, I wanted to make something just for you too, so I made you a keychain for your backpack.🎒 Obviously, you can't exactly have it yet... so for now, you get the digital reveal. 😄<br> And if you're curious, this isn't all I've gotten for you. 😏 Guess you'll have to FaceTime me to find out what else... or just get your SEXY self over here already! 😘 </br>
+
+			</p>
+			
+			<button class="unwrap-button" onclick="wrapGift()">
+				WRAP ME
+			</button>
+
+		</div>
+	
+		</div>
+
+	<!-- PRESENT #2 -->
+	<div class="gift-card" id="present2">
+
+		<div class="gift-label">
+			PRESENT #2
+		</div>
+	
+	<p class="gift-hint">
+		Hint: You're going to need one of your other hobbies for this one... 🎸 
+	</p>
+
+	<div class="gift-box"></div>
+	<div class="gift-bow"></div>
+
+	<button id="unwrapButton2"
+		class="unwrap-button"
+		onclick="unwrapGift2()">
+	   	UNWRAP ME
+	</button>
+
+<div id="guitarReveal" class="gift-reveal">
+
+	<h2>GRAB YOUR GUITAR🎸</h2> 
+	
+	<p> 
+		I picked a song for you to play, it's a favorite of mine! ❤️
+	</p> 
+
+<br>
+<div class="chord-card">
+	<p class="artist"><strong>Genre:</strong> Christian Pop</p>
+
+	<br><p class="chord-label"><u>MAIN CHORD PROGRESSION</u></p>
+	<div class="chords">
+		G &nbsp;-&nbsp; Bm &nbsp;-&nbsp; A &nbsp;-&nbsp; D
+	</div>
+
+	<p><strong>Tempo:</strong> 72 BPM</p>
+
+	<p><strong>Strumming:</strong><br>
+		&darr; &nbsp; &uarr; &nbsp; &darr; &nbsp; &darr; &nbsp; &uarr; &nbsp; &darr;
+	</p>
+</div>
+
+	<p>
+		<u>Think you know what song I picked?</u> <br> Figure it out and enter your guess below. If you dare... play it, record yourself, and share it with me! 😉❤️
+	</p>
+
+<div class="song-guess">
+	<input
+		type="text"
+		id="songGuess"
+		placeholder="Enter song title..."
+	>
+
+	<button class="unwrap-button guess button" onclick="checkSongGuess()">GUESS</button>
+
+	<p id="songGuessResult"></p>
+
+<button class="unwrap-button" onclick="wrapGift2()">WRAP ME</button>
+
+</div>
+</div>
+</div>
+
+
+<! END PRESENT #2 -->
+
+<!-- PRESENT #3 -->
+<div class="gift-card" id="present3">
+
+	<div class="gift-label">
+		PRESENT #3
+	</div>
+
+	<p class="gift-hint">
+		Hint: You asked about my family crest and so here's some history for you.😏
+	</p>
+	
+<button id="unwrapButton3"
+	class="unwrap-button"
+	onclick="unwrapGift3()">
+		UNWRAP ME
+
+</button>
+
+<div class="gift-box"></div>
+<div class="gift-bow"></div>
+
+	<div id="crestReveal"
+		class="gift-reveal"
+		style="display: none;">
+
+		<img src="mets-crest.png"
+			alt="METS / мец family crest"
+			class="crest-image">
+
+		<div class="crest-history">
+
+			<p>
+				There are two things I found that are worth paying attention to...
+			</p>
+
+			<h3>⚔️</h3>
+
+			<p>
+				One possible origin of Mets/мец is connected to <strong>knife-makers.</strong>
+			</p>
+
+			<p>
+				You design lightsabers. <br> I mean... come on.😂
+			</p>
+
+			<h3>📖</h3>
+	
+			<p>
+		
+				Another possible interpretation I found is <strong>"righteous teacher."</strong>
+			</p>
+
+			<p>
+				I can't say these meanings belong specifically to your branch of the мец family without knowing more about your family's history in Ukraine.
+			</p>
+
+			<p>
+				But a knife-maker and a teacher?
+			</p>
+
+			<p>
+				<strong>That's definitely worth paying attention to. ❤️</strong>
+			</p>
+		
+			</div>
+
+			
+			<button class="unwrap-button"
+				onclick="wrapGift3()">
+					WRAP ME
+			</button>
+
+			</div>
+			</div>
+<!-- END PRESENT #3 -->
+
+</section>
+
+<script>
+function unwrapGift() {
+  document.querySelector(".gift-container .gift-box").style.display = "none";
+  document.getElementById("giftReveal").style.display = "block";
+  document.getElementById("unwrapButton").style.display = "none";
+}
+
+function wrapGift() {
+  document.getElementById("giftReveal").style.display = "none";
+  document.querySelector(".gift-container .gift-box").style.display = "block";
+  document.getElementById("unwrapButton").style.display = "inline-block";
+}
+
+// PRESENT #2
+function unwrapGift2() {
+  const present2 = document.getElementById("present2");
+
+  present2.querySelector(".gift-box").style.display = "none";
+  present2.querySelector(".gift-bow").style.display = "none";
+  document.getElementById("unwrapButton2").style.display = "none";
+  document.getElementById("guitarReveal").style.display = "block";
+}
+
+function wrapGift2() {
+  const present2 = document.getElementById("present2");
+
+  document.getElementById("guitarReveal").style.display = "none";
+  present2.querySelector(".gift-box").style.display = "block";
+  present2.querySelector(".gift-bow").style.display = "block";
+  document.getElementById("unwrapButton2").style.display = "inline-block";
+}
+
+function checkSongGuess() {
+  const guess = document.getElementById("songGuess").value
+    .trim()
+    .toLowerCase();
+
+  const result = document.getElementById("songGuessResult");
+
+  if (guess === "god only knows") {
+    result.textContent = "❤️ YOU'RE A ROCKSTAR! 🎸";
+  } else {
+    result.innerHTML = "Sorry! But here's a hint: <br><strong>Artist:</strong> for King & Country";
+  }
+}
+
+// PRESENT #3
+function unwrapGift3() {
+  const present3 = document.getElementById("present3");
+
+  present3.querySelector(".gift-box").style.display = "none";
+  present3.querySelector(".gift-bow").style.display = "none";
+  document.getElementById("unwrapButton3").style.display = "none";
+  document.getElementById("crestReveal").style.display = "block";
+}
+
+function wrapGift3() {
+  const present3 = document.getElementById("present3");
+
+  document.getElementById("crestReveal").style.display = "none";
+  present3.querySelector(".gift-box").style.display = "block";
+  present3.querySelector(".gift-bow").style.display = "block";
+  document.getElementById("unwrapButton3").style.display = "inline-block";
+}
+</script>
+
+</body>
+</html>
+
+
+			
+
+
+
